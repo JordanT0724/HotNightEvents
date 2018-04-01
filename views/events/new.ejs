@@ -1,0 +1,26 @@
+<% include ../partials/header%>
+
+<form action="/events" method="POST">
+	<input type="text" name="event[eventName]" placeholder="Event Name">
+	<input type="text" name="event[date]">
+	<input type="text" name="event[address]" placeholder="Address">
+	<input type="text" name="event[city]" placeholder="City">
+	<input type="text" name="event[state]" placeholder="State">
+	<input type="file" name="event[image]" accept="image/*">
+	<button>Submit</button>
+</form>
+
+<% include ../partials/footer%>
+
+<!-- eventName: String,
+	timeStart: String,
+	timeEnd: String,
+	address: String,
+	city: String,
+	state: String,
+	dateStart: Date,
+	dateEnd: Date,
+	contact: String,
+	phone: Number,
+	venueType: String,
+	created: {type: Date, default: Date.now} -->

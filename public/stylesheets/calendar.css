@@ -1,0 +1,14 @@
+table, td{
+	border: 1px solid #ddd;
+}
+ div.zabuto_calendar .table tr.calendar-month-header td{
+	border: none;
+	background-color: steelblue;
+}
+div.zabuto_calendar .table tr.calendar-dow-header th{
+	background-color: cornflowerblue;
+}
+div.zabuto_calendar{
+	margin: 5% 15%;
+}
+
