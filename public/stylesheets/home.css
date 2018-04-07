@@ -1,3 +1,4 @@
+/*Banner Styles*/
 #header-banner{
 	display: block;
 	width: 100%;
@@ -48,4 +49,39 @@ p {
   font-size:12px;
   color:#999;
   margin-top:200px;
+}
+
+#fb-like-icon img, #fb-like-icon{
+  margin: 0;
+  width: 112px;
+  height: 48px;
+}
+
+/*Featured Events Slider*/
+.slick-prev:before{
+  content: "<";
+  font-size: 40px;
+}
+.slick-prev:before, .slick-next:before{
+  color: #000;
+}
+.slick-next:before{
+  content: ">";
+  font-size: 40px;
+}
+.slick-next:before, .slick-next:before{
+  color: #000;
+}
+.featured-slider img{
+  height: 200px;
+  width: 300px;
+  padding: 10px;
+  margin: 0;
+}
+.featured-slider{
+  width: 900px;
+  margin: 50px auto;
+}
+h1, h2{
+  text-align: center;
 }
