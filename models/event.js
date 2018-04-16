@@ -3,20 +3,22 @@ var mongoose = require('mongoose');
 //Schema Setup
 
 var eventSchema = new mongoose.Schema({
-	eventName: String,
+	_id: mongoose.Schema.Types.ObjectId,
+	eventName: {type: String},
 	//timeStart: String,
 	//timeEnd: String,
-	address: String,
-	city: String,
-	state: String,
-	image: String
+	//address: String,
+	//city: String,
+	//state: String,
+	image: {type: String},
+	approve: {type: String}
 	//dateStart: Date,
 	//dateEnd: Date,
 	//contact: String,
 	//phone: Number,
 	//venueType: String,
 	//created: {type: Date, default: Date.now}
-})
+});
 
 module.exports = mongoose.model('Event', eventSchema);
 

@@ -1,12 +1,14 @@
 <% include ../partials/header%>
 
-<form action="/events" method="POST">
-	<input type="text" name="event[eventName]" placeholder="Event Name">
-	<input type="text" name="event[date]">
-	<input type="text" name="event[address]" placeholder="Address">
-	<input type="text" name="event[city]" placeholder="City">
-	<input type="text" name="event[state]" placeholder="State">
-	<input type="file" name="event[image]" accept="image/*">
+<form action="/events" method="POST" enctype="multipart/form-data">
+	<div class="form-group">
+		<label for="image-upload">Image Upload</label>
+    	<input type="file" name="image" id="image-upload">
+    	<p class="help-block">140x233 work the best</p>
+    	<label for="event-name">Name Of Your Event</label>
+    	<input type="text" name="name" id="event-name">
+	</div>
+	<!-- <input type="file" name="event[image]" accept="image/*"> -->
 	<button>Submit</button>
 </form>
 
@@ -24,3 +26,9 @@
 	phone: Number,
 	venueType: String,
 	created: {type: Date, default: Date.now} -->
+
+	<!-- <input type="text" name="event[eventName]" placeholder="Event Name">
+	<input type="text" name="event[date]">
+	<input type="text" name="event[address]" placeholder="Address">
+	<input type="text" name="event[city]" placeholder="City">
+	<input type="text" name="event[state]" placeholder="State"> -->

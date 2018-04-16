@@ -1,16 +1,14 @@
 var express = require('express');
 var	router  = express.Router({mergeParams: true});
 var Event   = require('../models/event');
+var multer  = require('multer');
+
+router.get('/', function(req, res){
+    res.render('./events/index');
+});
 
 router.get('/events', function(req, res){
-	
-	Event.find({}, function(err, allEvents){
-		if(err){
-			console.log(err);
-		} else { 
-			res.render('./events/events', {events: allEvents});
-		}
-	});
+	res.render('./events/calendar');
 });
 
 router.get('/events/new', function(req, res){
@@ -18,14 +16,9 @@ router.get('/events/new', function(req, res){
 });
 
 router.post('/events', function(req, res){
-	Event.create(req.body.event, function(err, newEvent){
-		if(err){
-			console.log(err);
-		} else{
-			res.redirect('/');
-		}
-
-	})
+	res.send('post route');
 });
 
 module.exports = router;	
+
+	
