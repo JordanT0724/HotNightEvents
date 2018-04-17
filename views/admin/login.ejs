@@ -1,0 +1,29 @@
+<% include ../partials/header%>
+
+<style type="text/css">
+	form{
+		width: 30%;
+		margin: 10% auto 0 auto;
+		border: 1px solid lightgrey;
+		padding: 15px;
+		border-radius: 5px;
+	}
+	h1{
+		text-align: center;
+		padding-bottom: 20px;
+	}
+</style>
+
+<form action="/admin" method="POST">
+	<h1>Admin Login</h1>
+	<div class="form-group">
+		<input class="form-control" type="text" name="username" placeholder="username">
+		<input class="form-control" type="password" name="password" placeholder="password">
+		<button class="form-control btn btn-primary" type="submit">Submit</button>	
+	</div>
+</form>
+
+<button><a href="./admin/dashboard">Dashboard</a></button>
+
+<% include ../partials/footer%>
+

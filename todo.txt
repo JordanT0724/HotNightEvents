@@ -1,0 +1,20 @@
+** events/new.ejs
+	-picture uploader -DONE
+	-text info in form
+** routes/event.js
+	-save image and all data except for approve status
+** Admin Routes
+	get -'/admin'
+	get -'/admin/:id'
+	put - '/admin/:id'
+	get - '/admin/:id/edit'
+	put - '/admin/:id/edit'
+	delete - 'admin/:id/'
+** Admnin View
+	- Login
+	- Dashboard
+	- Show Event
+		-approve/delete event buttons
+** Passport Authentication/Authorization
+	- Middleware for all admin routes
+**
