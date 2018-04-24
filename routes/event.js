@@ -22,6 +22,9 @@ const storage = multer.diskStorage({
       case 'image/jpeg':
       filename = filename + ".jpeg";
       break;
+      case 'image/jpg':
+      filename = filename + ".jpg";
+      break;
       default:
       break;
     }
@@ -30,7 +33,7 @@ const storage = multer.diskStorage({
 });
 var fileFilter = (req, file, cb) => {
   // reject a file
-  if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+  if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png' || file.mimetype === 'image/jpg') {
     cb(null, true);
   } else {
     cb(null, false);
@@ -56,11 +59,25 @@ router.get('/events/new', function(req, res){
 	res.render('./events/new');
 });
 
-router.post('/events', upload.single('image'), function(req, res){
+router.post('/events', upload.single('event-image'), function(req, res){
 	var event = new Event({
 		_id: new mongoose.Types.ObjectId(),
 		eventName: req.body.name,
-		image: req.file.filename
+    details: req.body.details,
+		image: req.file.filename,
+    location: req.body.location,
+    address: req.body.address,
+    city: req.body.city,
+    state: req.body.state,
+    zipCode: req.body.zipCode,
+    contactName: req.body.contactName,
+    contactPhone: req.body.contactPhone,
+    eventDate: req.body.eventDate,
+    startDate: req.body.startDate,
+    endDate: req.body.endDate,
+    startTime: req.body.startTime,
+    endTime: req.body.endTime,
+    cost: req.body.cost
 	});
 	event.save(function(err, data){
 		if(err){

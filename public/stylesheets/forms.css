@@ -1,0 +1,80 @@
+body{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+}
+.form-container{
+	width: 80%;
+	border: 1px solid black;
+	margin: 50px auto;
+}
+.basic-info{
+	justify-content: center;
+	display: grid;
+	grid-template-columns: 15% 75%;
+	grid-template-rows: auto;
+	grid-row-gap: 20px;
+	grid-column-gap: 30px;
+	grid-template-areas: "remark remark"
+						 "submit submit";
+}
+h1{
+	margin: 0;
+	text-align: center;
+	background-color: purple;
+	grid-area: header;
+	padding: 20px 0;
+	color: white;
+}
+.upper-form label, .adjust-right{
+	justify-self: end;
+}
+form p{
+	justify-self: start;
+}
+.remark{
+	font-weight: bold;
+	grid-area: remark;
+}
+.red-asterisk{
+	color: red;
+}
+.btn{
+	display: block;
+	margin: 30px auto;
+	width: 20%;
+	padding: 10px;
+}
+.featured-event{
+	grid-column-start: 2;
+	grid-column-end: 3; 
+}
+.inner-grid{
+	display: grid;
+	grid-template-columns: 20% 20% 20%;
+	grid-column-gap: 30px;
+	justify-content: start;
+}
+.col-2{
+	grid-column-start: 2;
+	grid-column-end: 3;
+	justify-self: start;
+	margin: 0;
+	padding: 0;
+}
+.checkbox-grid{
+	display: grid;
+	grid-template-columns: 19.9% 19.9% 19.9% 19.9% 19.9%;
+	grid-template-areas: "checkall checkall checkall checkall checkall";
+	justify-items: start;
+}
+.checkall{
+	grid-area: checkall;
+	font-weight: bold;
+	padding-left: 3.5%;
+}
+.checkbox-grid div label{
+	font-weight: normal;
+}
+.checkbox-grid input[type=checkbox]{
+	margin-left: 1em;
+}
