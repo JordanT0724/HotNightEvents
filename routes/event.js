@@ -59,7 +59,8 @@ router.get('/events/new', function(req, res){
 	res.render('./events/new');
 });
 
-router.post('/events', upload.single('event-image'), function(req, res){
+router.post('/events', upload.single('image'), function(req, res){
+  var newTags = {fineDining: req.body.fineDining, banquetHall: req.body.banquetHall, asian: req.body.asian, fundraiser: req.body.fundraiser, disco: req.body.disco, casual: req.body.casual, restaurant: req.body.restaurant, french: req.body.french, dancing: req.body.dancing, jazz: req.body.jazz, buffet: req.body.buffet, american: req.body.american, seafood: req.body.seafood, festival: req.body.festival, ratPack: req.body.ratPack, brunch: req.body.brunch, italian: req.body.italian, vegan: req.body.vegan, liveEntertainment: req.body.liveEntertainment, motown: req.body.motown, bar: req.body.bar, mediterranean: req.body.mediterranean, vegetarian: req.body.vegetarian, rock: req.body.rock, freestyle: req.body.freestyle, nightClub: req.body.nightClub, cuban: req.body.cuban, glutenFree: req.body.glutenFree, top40: req.body.top40, hiphopRB: req.body.hiphopRB, byob: req.body.byob, twentyOne: req.body.twentyOne, eighteen: req.body.eighteen, family: req.body.family, pet: req.body.pet, freeAdmission: req.body.freeAdmission}; 
 	var event = new Event({
 		_id: new mongoose.Types.ObjectId(),
 		eventName: req.body.name,
@@ -70,14 +71,18 @@ router.post('/events', upload.single('event-image'), function(req, res){
     city: req.body.city,
     state: req.body.state,
     zipCode: req.body.zipCode,
-    contactName: req.body.contactName,
-    contactPhone: req.body.contactPhone,
+    displayContactName: req.body.contactName,
+    displayContactPhone: req.body.contactPhone,
     eventDate: req.body.eventDate,
     startDate: req.body.startDate,
     endDate: req.body.endDate,
     startTime: req.body.startTime,
     endTime: req.body.endTime,
-    cost: req.body.cost
+    cost: req.body.cost,
+    tags: newTags,
+    contactName: req.body.contactName,
+    contactPhone: req.body.contactPhone,
+    contactEmail: req.body.contactEmail
 	});
 	event.save(function(err, data){
 		if(err){
