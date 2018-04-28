@@ -19,7 +19,7 @@ body, html, nav, div{
     min-height: 80px;
     margin-bottom: 0;
     border: none;
-    background-color:  #603d60;
+    background-color: #603d60;
 }
 .navbar-brand {
 	padding: 0px;
@@ -49,4 +49,28 @@ body, html, nav, div{
     	padding-bottom: 26.5px;
     	line-height: 27px;
   	}
+}
+
+/*Footer Style*/
+footer{
+	display: grid;
+	grid-template-columns: 25% 35% 25%;
+	justify-content: space-evenly;
+	height: 300px;
+	background-color: #603d60;
+	color: white;
+}
+.footer-col{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+}
+#social-icons{
+	display: flex;
+	flex-direction: row;
+}
+.social-icons-image img{
+	max-width: 50px;
+	max-height: 50px;
 }

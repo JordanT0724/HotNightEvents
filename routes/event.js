@@ -48,7 +48,14 @@ var upload = multer({
 });
 
 router.get('/', function(req, res){
-    res.render('./events/index');
+  Event.find({}, function(err, data){
+    if(err){
+      console.log(err);
+    } else {
+      //console.log(data);
+       res.render('./events/index', {data: data});   
+    }
+  });
 });
 
 router.get('/events', function(req, res){
@@ -60,19 +67,22 @@ router.get('/events/new', function(req, res){
 });
 
 router.post('/events', upload.single('image'), function(req, res){
-  var newTags = {fineDining: req.body.fineDining, banquetHall: req.body.banquetHall, asian: req.body.asian, fundraiser: req.body.fundraiser, disco: req.body.disco, casual: req.body.casual, restaurant: req.body.restaurant, french: req.body.french, dancing: req.body.dancing, jazz: req.body.jazz, buffet: req.body.buffet, american: req.body.american, seafood: req.body.seafood, festival: req.body.festival, ratPack: req.body.ratPack, brunch: req.body.brunch, italian: req.body.italian, vegan: req.body.vegan, liveEntertainment: req.body.liveEntertainment, motown: req.body.motown, bar: req.body.bar, mediterranean: req.body.mediterranean, vegetarian: req.body.vegetarian, rock: req.body.rock, freestyle: req.body.freestyle, nightClub: req.body.nightClub, cuban: req.body.cuban, glutenFree: req.body.glutenFree, top40: req.body.top40, hiphopRB: req.body.hiphopRB, byob: req.body.byob, twentyOne: req.body.twentyOne, eighteen: req.body.eighteen, family: req.body.family, pet: req.body.pet, freeAdmission: req.body.freeAdmission}; 
-	var event = new Event({
-		_id: new mongoose.Types.ObjectId(),
-		eventName: req.body.name,
+  var newTags = {fineDining: req.body.fineDining, banquetHall: req.body.banquetHall, asian: req.body.asian, disco: req.body.disco, casual: req.body.casual, french: req.body.french, jazz: req.body.jazz, buffet: req.body.buffet, american: req.body.american, seafood: req.body.seafood, ratPack: req.body.ratPack, italian: req.body.italian, vegan: req.body.vegan, liveEntertainment: req.body.liveEntertainment, motown: req.body.motown, bar: req.body.bar, mediterranean: req.body.mediterranean, vegetarian: req.body.vegetarian, rock: req.body.rock, freestyle: req.body.freestyle, nightClub: req.body.nightClub, cuban: req.body.cuban, glutenFree: req.body.glutenFree, top40: req.body.top40, hiphopRB: req.body.hiphopRB, byob: req.body.byob, pet: req.body.pet, freeAdmission: req.body.freeAdmission}; 
+  var event = new Event({
+		_id: mongoose.Types.ObjectId(),
+		eventName: req.body.eventName,
     details: req.body.details,
+    path: req.file.path,
 		image: req.file.filename,
     location: req.body.location,
+    featured: req.body.featured,
     address: req.body.address,
     city: req.body.city,
     state: req.body.state,
     zipCode: req.body.zipCode,
-    displayContactName: req.body.contactName,
-    displayContactPhone: req.body.contactPhone,
+    displayContactName: req.body.displayContactName,
+    displayContactPhone: req.body.displayContactPhone,
+    displayContactEmail: req.body.displayContactEmail,
     eventDate: req.body.eventDate,
     startDate: req.body.startDate,
     endDate: req.body.endDate,
@@ -80,18 +90,34 @@ router.post('/events', upload.single('image'), function(req, res){
     endTime: req.body.endTime,
     cost: req.body.cost,
     tags: newTags,
+    website: req.body.website,
+    tickets: req.body.tickets,
     contactName: req.body.contactName,
     contactPhone: req.body.contactPhone,
-    contactEmail: req.body.contactEmail
+    contactEmail: req.body.contactEmail,
+    audience: req.body.audience,
+    eventType: req.body.eventType
 	});
 	event.save(function(err, data){
 		if(err){
 			console.log(err);
 		} else {
-			console.log(data);
+      //console.log(data);
 			res.redirect('/');
 		}
 	});
+});
+
+router.get('/:_id', function(req, res){
+  Event.findById(req.params._id, function(err, data){
+    if(err){
+      console.log(err);
+    } else {
+      console.log(data);
+
+      res.render('./events/show', {data: data})
+    }
+  });
 });
 
 module.exports = router;	

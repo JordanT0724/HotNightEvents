@@ -5,7 +5,7 @@
 	<h1>ADD EVENT</h1>
 	
 	<form action="/events" method="POST" enctype="multipart/form-data">
-		<div class="basic-info">
+		<div class="outer-grid">
 			<p class="remark">Complete the below form. Mandatory fields are marked<span class="red-asterisk">*</span></p>
 			<label><span class="red-asterisk">*</span>Event Name: </label>
 			<input type="text" name="eventName">
@@ -81,9 +81,11 @@
 			<label><span class="red-asterisk">*</span>Zip Code: </label>
 			<input type="text" name="zipCode">
 			<label>Contact Name: </label>
-			<input type="text" name="displayContactName" placeholder=" Add event contact for display on the website">
+			<input type="text" name="displayContactName" placeholder=" Add a contact name for display on the website">
 			<label>Contact Phone: </label>
-			<input type="tel" name="dispalyContactPhone" placeholder=" Add event contact phone number for display on the website">
+			<input type="tel" name="displayContactPhone" placeholder=" Add a phone number for display on the website">
+			<label>Contact Email: </label>
+			<input type="email" name="displayContactEmail" placeholder="Add an email for display on the website">
 			<label><span class="red-asterisk">*</span>Event Duration: </label>
 			<span></span>
 			<span></span>
@@ -110,162 +112,156 @@
 			<div class="inner-grid">
 				<input type="text" name="cost">
 			</div>
+			<label><span class="red-asterisk">*</span>Event Type: </label>
+			<div class="inner-grid">	
+				<select name="eventType">
+					<option>Please Choose One</option>
+					<option value="Comedy">Comedy</option>
+					<option value="Concert">Concert</option>
+					<option value="Dance">Dance</option>
+					<option value="Dinner">Dinner</option>
+					<option value="Festival">Festival</option>
+					<option value="Fundraiser">Fundraiser</option>
+					<option value="MediaEvent">Media Event</option>
+					<option value="Music">Music</option>
+					<option value="Party">Party</option>
+					<option value="Show">Show</option>
+					<option value="Tasting">Tasting</option>
+				</select>
+			</div>
+			<label><span class="red-asterisk">*</span>Audience: </label>
+			<div class="inner-grid">
+				<select name="audience">
+					<option>Please Choose One</option>
+					<option value="21 and Older">21 and Older</option>
+					<option value="18 and Older">18 and Older</option>
+					<option value="Family Friendly">Family Friendly</option>
+				</select>
+			</div>
 			<label>Sponsor: </label>
 			<input type="text" name="sponsor">
 			<label>Website: </label>
-			<input type="url" name="website" placeholder="Please enter full web address.">
+			<input type="url" name="website" placeholder="Please enter full web address.   https://www.example.com">
 			<label>Tickets: </label>
 			<input type="url" name="tickets" 
-				placeholder="If you are selling tickets, please put the web address for ticket sales here.">
+				placeholder="If you are selling tickets, please put the full web address for ticket sales here.">
 		</div>
 		<div class="checkbox-grid">
 			<p class="checkall">Check all that apply</p>	
 			<div>
-				<input type="checkbox" name="fineDining" value="true">
+				<input type="checkbox" name="fineDining" value="Fine Dining">
 				<label>Fine Dining</label>
 			</div>
 			<div>
-				<input type="checkbox" name="banquetHall" value="true">
+				<input type="checkbox" name="banquetHall" value="Banquet Hall">
 				<label>Banquet Hall</label>
 			</div>
 			<div>
-				<input type="checkbox" name="asian" value="true">
+				<input type="checkbox" name="asian" value="Asian Cuisine">
 				<label>Asian Cuisine</label>
 			</div>
 			<div>
-				<input type="checkbox" name="fundraiser" value="true">
-				<label>Fundraiser</label>
-			</div>
-			<div>
-				<input type="checkbox" name="disco" value="true">
+				<input type="checkbox" name="disco" value="Disco">
 				<label>Disco</label>
 			</div>
 			<div>
-				<input type="checkbox" name="casual" value="true">
+				<input type="checkbox" name="casual" value="Casual Dining">
 				<label>Casual Dining</label>
 			</div>
 			<div>
-				<input type="checkbox" name="restaurant" value="true">
-				<label>Restaurant</label>
-			</div>
-			<div>
-				<input type="checkbox" name="french" value="true">
+				<input type="checkbox" name="french" value="French Cuisine">
 				<label>French Cuisine</label>
 			</div>
 			<div>
-				<input type="checkbox" name="dancing" value="true">
-				<label>Dancing</label>
-			</div>
-			<div>
-				<input type="checkbox" name="jazz" value="true">
+				<input type="checkbox" name="jazz" value="Jazz">
 				<label>Jazz</label>
 			</div>
 			<div>
-				<input type="checkbox" name="buffet" value="true">
+				<input type="checkbox" name="buffet" value="Buffet">
 				<label>Buffet</label>
 			</div>
 			<div>
-				<input type="checkbox" name="american" value="true">
+				<input type="checkbox" name="american" value="American Cuisine">
 				<label>American Cuisine</label>
 			</div>
 			<div>
-				<input type="checkbox" name="seafood" value="true">
+				<input type="checkbox" name="seafood" value="Seafood">
 				<label>Seafood</label>
 			</div>
 			<div>
-				<input type="checkbox" name="festival" value="true">
-				<label>Festival</label>
-			</div>
-			<div>
-				<input type="checkbox" name="ratPack" value="true">
+				<input type="checkbox" name="ratPack" value="Rat Pack">
 				<label>Rat Pack</label>
 			</div>
 			<div>
-				<input type="checkbox" name="brunch" value="true">
+				<input type="checkbox" name="brunch" value="Brunch">
 				<label>Brunch</label>
 			</div>
 			<div>
-				<input type="checkbox" name="italian value="true">
+				<input type="checkbox" name="italian" value="Italian Cuisine">
 				<label>Italian Cuisine</label>
 			</div>
 			<div>
-				<input type="checkbox" name="vegan" value="true">
+				<input type="checkbox" name="vegan" value="Vegan Options">
 				<label>Vegan Options</label>
 			</div>
 			<div>
-				<input type="checkbox" name="liveEntertainment" value="true">
-				<label>Live Entertainment</label>
-			</div>
-			<div>
-				<input type="checkbox" name="motown" value="true">
+				<input type="checkbox" name="motown" value="Motown">
 				<label>Motown</label>
 			</div>
 			<div>
-				<input type="checkbox" name="bar" value="true">
+				<input type="checkbox" name="bar" value="Bar">
 				<label>Bar</label>
 			</div>
 			<div>
-				<input type="checkbox" name="mediterranean" value="true">
+				<input type="checkbox" name="mediterranean" value="Mediterranean Cuisine">
 				<label>Mediterranean</label>
 			</div>
 			<div>
-				<input type="checkbox" name="vegetarian" value="true" >
+				<input type="checkbox" name="vegetarian" value="Vegetarian Options" >
 				<label>Vegetarian Options</label>
 			</div>
 			<div>
-				<input type="checkbox" name="rock" value="true">
+				<input type="checkbox" name="rock" value="Rock">
 				<label>Rock</label>
 			</div>
 			<div>
-				<input type="checkbox" name="freestyle" value="true">
+				<input type="checkbox" name="freestyle" value="Freestyle">
 				<label>Freestyle</label>
 			</div>
 			<div>
-				<input type="checkbox" name="nightClub" value="true">
+				<input type="checkbox" name="nightClub" value="Night Club">
 				<label>Night Club</label>
 			</div>
 			<div>
-				<input type="checkbox" name="cuban" value="true">
+				<input type="checkbox" name="cuban" value="Cuban Cuisine">
 				<label>Cuban Cuisine</label>
 			</div>
 			<div>
-				<input type="checkbox" name="glutenFree" value="true">
+				<input type="checkbox" name="glutenFree" value="Gluten Free Options">
 				<label>Gluten Free Options</label>
 			</div>
 			<div>
-				<input type="checkbox" name="top40" value="true">
+				<input type="checkbox" name="top40" value="Top 40">
 				<label>Top 40</label>
 			</div>
 			<div>
-				<input type="checkbox" name="hiphopRB" value="true0">
+				<input type="checkbox" name="hiphopRB" value="R&B/Hip Hop">
 				<label>Hip Hop/R&B</label>
 			</div>
 			<div>
-				<input type="checkbox" name="byob" value="true">
+				<input type="checkbox" name="byob" value="BYOB">
 				<label>BYOB</label>
 			</div>
 			<div>
-				<input type="checkbox" name="twentyOne" value="true">
-				<label>21 and Older</label>
-			</div>
-			<div>
-				<input type="checkbox" name="eighteen" value="true">
-				<label>18 and Older</label>
-			</div>
-			<div>
-				<input type="checkbox" name="family" value="true">
-				<label>Family Friendly</label>
-			</div>
-			<div>
-				<input type="checkbox" name="pet" value="true">
+				<input type="checkbox" name="pet" value="Pet Friendly">
 				<label>Pet Friendly</label>
 			</div>
 			<div>
-				<input type="checkbox" name="freeAdmission" value="true">
+				<input type="checkbox" name="freeAdmission" value="Free Admission">
 				<label>Free Admission</label>
 			</div>
 		</div>
-		<div class="basic-info">
+		<div class="outer-grid">
 			<p class="remark">Please provide your contact information so Hot Night Events can contact you with pricing, term & conditions</p>
 			<label><span class="red-asterisk">*</span>Your name: </label>
 			<input type="text" name="contactName">

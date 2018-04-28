@@ -4,6 +4,8 @@
 	width: 100%;
 	height: 20%;
 	background-image: url("../images/header_banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; 
 	color:white;
   text-transform: uppercase;
   font-size: 2.625em;
@@ -42,7 +44,7 @@
   100% {margin-top:-270px;}
 }
 
-p {
+#header-banner p {
   position:fixed;
   width:100%;
   bottom:30px;
@@ -50,11 +52,9 @@ p {
   color:#999;
   margin-top:200px;
 }
-
-#fb-like-icon img, #fb-like-icon{
-  margin: 0;
-  width: 112px;
-  height: 48px;
+.fb-like{
+  margin-right: 93%;
+  margin-bottom: 10px;
 }
 
 /*Featured Events Slider*/

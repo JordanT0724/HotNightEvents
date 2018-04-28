@@ -1,0 +1,72 @@
+<% include ../partials/header%>
+<link rel="stylesheet" type="text/css" href="./stylesheets/show.css">
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<%var options = {weekday: 'long', year: 'numeric', month: 'long', day:'numeric'}%>
+<div class="show-container">
+	<div id="image">
+		<img src="../../<%=data.image%>">
+	</div>
+	<h1><strong><%=data.eventName%></strong></h1>
+	<br>
+	<p><%=data.location%></p>
+	<p><%=data.address%></p>
+	<p><%=data.city%>, <%=data.state%> <%=data.zipCode%></p>
+	<br>
+	<p><%=data.eventDate.toLocaleDateString('en-US', options)%></p>
+	<p><%=data.eventDate.toLocaleTimeString('en-US', {hour12:true, hour:'2-digit', minute:'2-digit'})%></p>
+	<br>
+	<p><%=data.displayContactName + "  " + data.displayContactPhone%> </p>
+	<p>Email: <%=data.displayContactEmail%></p>
+	<p><%=data.website%></p>
+	<br>
+	<div class="admission-container">
+			<div class="admission">
+				<p>Admission</p>
+				<p><%=data.cost%></p>
+				<p><%=data.audience%></p>
+			</div>
+			<div class="ticket-button">
+				<a href="<%=data.tickets%>"><button>PURCHASE TICKETS</button></a>
+			</div>	
+	</div>
+	<p><%=data.details%></p>
+	<span></span>
+	<div id="fb-like">
+		<div class="fb-like" data-href="https://www.facebook.com/HotNightEvents/" data-width="150" data-layout="standard" data-action="like" data-size="large" data-show-faces="true"></div>
+		<p>LIKE US ON FACEBOOK!</p>
+	</div>
+	<div id="tags">
+				<% var tagsArr = Object.keys(data.tags).map(val => data.tags[val])%>
+				<%for (var i = 1; i < tagsArr.length; i++){ %>
+					<% if(tagsArr[i] != undefined) {%>
+						<%if(i === tagsArr.length -1){ %>
+							<p><em><%=tagsArr[i]%></em></p>
+						<% } else {%>							
+							<p><em><%=tagsArr[i] + ", "%></em></p>
+						<% }; %>
+					<% }; %>	
+				<% }; %>
+	</div>
+	<span></span>
+	<div id="share">
+		<!-- <p>SHARE THIS EVENT</p> -->
+		<!-- <div id="share-icons-container">
+			<div class="share-icons" data-href="" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FHotNightEvents%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"><img src="images/facebook-icon-round.png"></a></div>
+			<div class="share-icons"><a class="twitter-share-button" href="https://twitter.com/intent/tweet"><img src="images/twitter-icon-round.png"></a></div>
+			<div class="share-icons"><a href="href=mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://www.hotnightevents.com" title="Share by Email""><img src="images/email-icon-round.jpg"></a></div>
+			<div class="share-icons"><a href=""><img src="images/instagram-icon-round.png"></a></div>
+		</div> -->
+	</div>
+</div>
+
+
+
+<% include ../partials/footer%>

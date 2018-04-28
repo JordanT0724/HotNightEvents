@@ -18,3 +18,9 @@
 ** Passport Authentication/Authorization
 	- Middleware for all admin routes
 **
+
+===================================================================
+Things to come back to
+
+-Socail Media share buttons on the show page
+-Email href="mailto:" doesn't work with Gmail set as default email. 

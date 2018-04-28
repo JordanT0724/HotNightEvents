@@ -7,7 +7,7 @@ body{
 	border: 1px solid black;
 	margin: 50px auto;
 }
-.basic-info{
+.outer-grid{
 	justify-content: center;
 	display: grid;
 	grid-template-columns: 15% 75%;
@@ -34,6 +34,7 @@ form p{
 .remark{
 	font-weight: bold;
 	grid-area: remark;
+	padding-top: 20px;
 }
 .red-asterisk{
 	color: red;
@@ -70,7 +71,8 @@ form p{
 .checkall{
 	grid-area: checkall;
 	font-weight: bold;
-	padding-left: 3.5%;
+	padding-left: 3.7%;
+	padding-top: 15px;
 }
 .checkbox-grid div label{
 	font-weight: normal;
