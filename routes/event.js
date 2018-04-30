@@ -52,13 +52,13 @@ router.get('/', function(req, res){
     if(err){
       console.log(err);
     } else {
-      //console.log(data);
-       res.render('./events/index', {data: data});   
+      console.log(data);
+      res.render('./events/index', {data: data});   
     }
   });
 });
 
-router.get('/events', function(req, res){
+router.get('/events/calendar', function(req, res){
 	res.render('./events/calendar');
 });
 
@@ -102,19 +102,17 @@ router.post('/events', upload.single('image'), function(req, res){
 		if(err){
 			console.log(err);
 		} else {
-      //console.log(data);
+      //console.log(data)
 			res.redirect('/');
 		}
 	});
 });
 
-router.get('/:_id', function(req, res){
+router.get('/events/:_id', function(req, res){
   Event.findById(req.params._id, function(err, data){
     if(err){
       console.log(err);
     } else {
-      console.log(data);
-
       res.render('./events/show', {data: data})
     }
   });

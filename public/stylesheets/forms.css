@@ -39,7 +39,7 @@ form p{
 .red-asterisk{
 	color: red;
 }
-.btn{
+.form-container .btn{
 	display: block;
 	margin: 30px auto;
 	width: 20%;

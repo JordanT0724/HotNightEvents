@@ -77,6 +77,10 @@
   width: 65.158%;
   margin: 16px 40px;
 }
+.slider-img-container{
+  max-width: 65.158%;
+  max-height: 385px;
+}
 .featured-slider{
   width: 90%;
   height: 70%;
@@ -117,4 +121,18 @@ h3{
   text-align: center;
   padding-top: 8px;
   margin: 0;
+}
+#current-date{
+  background-color: #603d60;
+  color: white;
+  margin: 16px auto;
+  font-size: 1.8em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+#next-event{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin: 16px auto;
 }

@@ -25,12 +25,15 @@
 <h2><em>HOT NIGHT EVENTS FEATURED EVENTS</em></h2>
 
 <div class="featured-slider">
-  <div><img src="images/gatehouse-reunion.jpg"></div>
+  <%for(var i = 0; i < data.length; i++){%>
+    <div class="slider-img-container"><a href="/events/<%=data[i]._id%>"><img src="../../<%=data[i].image%>"></a></div>
+  <%};%>
+  <!-- <div><img src="images/gatehouse-reunion.jpg"></div>
   <div><img src="images/flyer.jpg"></div>
   <div><img src="images/used-to-bes.jpg"></div>
   <div><img src="images/gatehouse-reunion.jpg"></div>
   <div><img src="images/flyer.jpg"></div>
-  <div><img src="images/used-to-bes.jpg"></div>
+  <div><img src="images/used-to-bes.jpg"></div> -->
 </div>
 
 <h3>LET HOT NIGHT EVENTS PROMOTE YOUR EVENT OR BUSINESS</h3>
@@ -41,10 +44,22 @@
 </div>
 
 <% for(var i = 0; i < data.length; i++){ %>
-  <h2><a href="/<%=data[i]._id%>"><%=data[i].eventName%></a></h2>
+  <h2><a href="/events/<%=data[i]._id%>"><%=data[i].eventName%></a></h2>
 <% }; %> 
+
+<!-- Options to be passed to Date object for human-readable formatting -->
+<%var options = {weekday: 'long', year: 'numeric', month: 'long', day:'numeric'}%>
+<%var currentDate = new Date()%>
+
+<h3 id="current-date">today is <%=currentDate.toLocaleDateString('en-US', options)%></h3>
+
+<h2 id="next-event"><strong><em>OUR NEXT HOT EVENT</em></strong></h2>
+<div class="next-event-container">
+  
+</div>
 
 
 <script type="text/javascript" src="./scripts/slick.min.js"></script>
 <script type="text/javascript" src="./scripts/home.js"></script>
+
 <% include ../partials/footer%>
