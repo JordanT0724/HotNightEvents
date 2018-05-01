@@ -42,7 +42,7 @@ app.use(adminRoutes);
 
 
 
-mongoose.connect('mongodb://jordant0724:celicax69@ds121464.mlab.com:21464/hotnightevents');
+mongoose.connect(process.env.DATABASEURL);
 
 app.listen(process.env.PORT || 3000, function(){
     console.log('Server Spinning Up!');
