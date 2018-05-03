@@ -25,9 +25,12 @@
 <h2><em>HOT NIGHT EVENTS FEATURED EVENTS</em></h2>
 
 <div class="featured-slider">
-  <%for(var i = 0; i < data.length; i++){%>
+  
+<%for(var i = 0; i < data.length; i++){%>
     <div class="slider-img-container"><a href="/events/<%=data[i]._id%>"><img src="../../<%=data[i].image%>"></a></div>
   <%};%>
+    
+
   <!-- <div><img src="images/gatehouse-reunion.jpg"></div>
   <div><img src="images/flyer.jpg"></div>
   <div><img src="images/used-to-bes.jpg"></div>
@@ -43,10 +46,6 @@
   <a href="#">LIST YOUR BUSINESS NOW</a>
 </div>
 
-<% for(var i = 0; i < data.length; i++){ %>
-  <h2><a href="/events/<%=data[i]._id%>"><%=data[i].eventName%></a></h2>
-<% }; %> 
-
 <!-- Options to be passed to Date object for human-readable formatting -->
 <%var options = {weekday: 'long', year: 'numeric', month: 'long', day:'numeric'}%>
 <%var currentDate = new Date()%>
@@ -58,8 +57,7 @@
   
 </div>
 
-
-<script type="text/javascript" src="./scripts/slick.min.js"></script>
+<script type="text/javascript" src="./scripts/slick.js"></script>
 <script type="text/javascript" src="./scripts/home.js"></script>
 
 <% include ../partials/footer%>

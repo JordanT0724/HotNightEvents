@@ -52,8 +52,11 @@ router.get('/', function(req, res){
     if(err){
       console.log(err);
     } else {
-      console.log(data);
-      res.render('./events/index', {data: data});   
+      var nextDate = nextEventDate(data);
+      var nextEvent = data.find(function(obj){
+        return obj.eventDate == nextDate;
+      });
+      res.render('./events/index', {data: data, nextEvent: nextEvent});   
     }
   });
 });
@@ -120,4 +123,13 @@ router.get('/events/:_id', function(req, res){
 
 module.exports = router;	
 
-	
+function nextEventDate(arr){
+  var dateArr = [];
+    for(var i = 0; i < arr.length; i++){
+      dateArr.push(arr[i].eventDate);
+    }
+    var sortedDateArr = dateArr.sort(function(a, b ){
+      return a-b;
+    });
+    return sortedDateArr[0];
+}

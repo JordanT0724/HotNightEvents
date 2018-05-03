@@ -24,3 +24,29 @@ Things to come back to
 
 -Socail Media share buttons on the show page
 -Email href="mailto:" doesn't work with Gmail set as default email. 
+
+
+
+<% for(var i = 0; i < data.length; i++){ %>
+  <h2><a href="/events/<%=data[i]._id%>"><%=data[i].eventName%></a></h2>
+<% }; %> 
+
+
+<%for(var i = 0; i < data.length; i++){%>
+    <div class="slider-img-container"><a href="/events/<%=data[i]._id%>"><img src="../../<%=data[i].image%>"></a></div>
+  <%};%>
+
+
+ router.get('/', function(req, res){
+  Event.find({}, function(err, data){
+    if(err){
+      console.log(err);
+    } else {
+      var nextDate = nextEventDate(data);
+      var nextEvent = data.find(function(obj){
+        return obj.eventDate == nextDate;
+      });
+      res.render('./events/index', {data: data, nextEvent: nextEvent});   
+    }
+  });
+});

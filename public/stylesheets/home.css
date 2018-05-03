@@ -73,13 +73,14 @@
   color: #000;
 }
 .featured-slider img{
-  height: 70%;
+  height: 400px;
   width: 65.158%;
   margin: 16px 40px;
 }
 .slider-img-container{
   max-width: 65.158%;
-  max-height: 385px;
+  max-height: 400px;
+  margin-bottom: 16px;
 }
 .featured-slider{
   width: 90%;
