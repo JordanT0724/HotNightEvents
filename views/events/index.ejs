@@ -1,7 +1,8 @@
 <% include ../partials/header %>
-<link rel="stylesheet" type="text/css" href="./stylesheets/slick.css">
-<link rel="stylesheet" type="text/css" href="./stylesheets/slick-theme.css">
+<link rel="stylesheet" type="text/css" href="./stylesheets/flickity.css">
+<script type="text/javascript" src="./scripts/flickity.pkgd.js"></script>
 <link rel="stylesheet" type="text/css" href="./stylesheets/home.css">
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -24,6 +25,7 @@
 
 <h2><em>HOT NIGHT EVENTS FEATURED EVENTS</em></h2>
 
+<<<<<<< HEAD
 <div class="featured-slider">
   
 <%for(var i = 0; i < data.length; i++){%>
@@ -37,6 +39,12 @@
   <div><img src="images/gatehouse-reunion.jpg"></div>
   <div><img src="images/flyer.jpg"></div>
   <div><img src="images/used-to-bes.jpg"></div> -->
+=======
+<div class="main-carousel">
+  <%for(var i = 0; i < data.length; i++){%>
+    <div class="carousel-cell"><a href="/events/<%=data[i]._id%>"><img src="../../<%=data[i].image%>"></a></div>
+  <%};%>
+>>>>>>> f25dc6026bb43b78e615c4c424d2e29468f3cb2a
 </div>
 
 <h3>LET HOT NIGHT EVENTS PROMOTE YOUR EVENT OR BUSINESS</h3>
@@ -57,7 +65,21 @@
   
 </div>
 
+<<<<<<< HEAD
 <script type="text/javascript" src="./scripts/slick.js"></script>
 <script type="text/javascript" src="./scripts/home.js"></script>
+=======
+<script type="text/javascript">
+  var elem = document.querySelector('.main-carousel');
+  var flkty = new Flickity( elem, {
+  // options
+  autoPlay: true,
+  autoPlay: 1500,
+  cellAlign: 'left',
+  contain: true
 
+});
+>>>>>>> f25dc6026bb43b78e615c4c424d2e29468f3cb2a
+
+</script> 
 <% include ../partials/footer%>

@@ -26,6 +26,9 @@ body, html, nav, div{
 	height: 80px;
     line-height: 120px;
 }
+.navbar-brand img{
+	border-radius: 5px;
+}
 .navbar-toggle {
     margin-top: 23px;
     padding: 9px 10px !important;

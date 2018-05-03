@@ -82,11 +82,16 @@
   max-height: 400px;
   margin-bottom: 16px;
 }
-.featured-slider{
+.main-carousel{
   width: 90%;
-  height: 70%;
+  height: 60%;
   margin: 0 auto;
   background: linear-gradient(to bottom, #4d4d4d 0%,#161515 100%);
+}
+.carousel-cell img{
+  width: 400px;
+  height: 600px;
+  margin: 10px 30px;
 }
 h2, h3{
   font-size: 36px;

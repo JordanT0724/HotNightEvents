@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(document).ready(function(){
   $('.featured-slider').slick({
 	  slidesToShow: 3,
@@ -26,3 +27,5 @@ $(document).ready(function(){
 	autoplaySpeed: 2000	    
 });*/
 
+=======
+>>>>>>> f25dc6026bb43b78e615c4c424d2e29468f3cb2a
