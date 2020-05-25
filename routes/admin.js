@@ -29,7 +29,7 @@ router.get('/admin/logout', function(req, res){
 });
 
 //Register Routes for future updates
-/*router.get('/admin/register', function(req, res){
+router.get('/admin/register', function(req, res){
 	res.render('./admin/register');
 });
 
@@ -45,7 +45,7 @@ router.post('/admin/register', function(req, res){
 			});
 		}
 	});
-});*/
+});
 
 function isLoggedIn(req, res, next){
 	if(req.isAuthenticated()){
