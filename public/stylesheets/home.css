@@ -56,42 +56,15 @@
   margin-right: 93%;
   margin-bottom: 10px;
 }
-
-/*Featured Events Slider*/
-.slick-prev:before{
-  content: "<";
-  font-size: 40px;
-}
-.slick-prev:before, .slick-next:before{
-  color: #000;
-}
-.slick-next:before{
-  content: ">";
-  font-size: 40px;
-}
-.slick-next:before, .slick-next:before{
-  color: #000;
-}
-.featured-slider img{
-  height: 400px;
-  width: 65.158%;
-  margin: 16px 40px;
-}
-.slider-img-container{
-  max-width: 65.158%;
-  max-height: 400px;
-  margin-bottom: 16px;
-}
 .main-carousel{
-  width: 90%;
-  height: 60%;
+  width: 80%;
   margin: 0 auto;
   background: linear-gradient(to bottom, #4d4d4d 0%,#161515 100%);
 }
 .carousel-cell img{
-  width: 400px;
-  height: 600px;
-  margin: 10px 30px;
+  min-width: 100%;
+  max-width: 100%;
+  height: 400px;
 }
 h2, h3{
   font-size: 36px;

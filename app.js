@@ -40,8 +40,6 @@ app.use('/', router);
 app.use(eventRoutes);
 app.use(adminRoutes);
 
-
-
 mongoose.connect(process.env.DATABASEURL);
 
 app.listen(process.env.PORT || 3000, function(){
